@@ -1,0 +1,21 @@
+{
+  "name": "volt",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "npx tsc && node dist/app.js",
+    "dev": "npx nodemon --watch server/**/* --exec ts-node server/app.ts"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.21",
+    "ts-node": "^10.6.0"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.44",
+    "typeorm-extension": "^1.2.0"
+  }
+}
