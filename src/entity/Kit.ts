@@ -4,11 +4,11 @@ import { KitProduct } from "./KitProduct";
 @Entity()
 export class Kit {
   @PrimaryGeneratedColumn()
-  id: number;
+  declare id: number;
 
   @Column()
-  name: string;
+  declare name: string;
 
   @OneToMany(() => KitProduct, (kitProduct) => kitProduct.kit)
-  kitProducts: KitProduct[];
+  declare kitProducts: KitProduct[];
 }

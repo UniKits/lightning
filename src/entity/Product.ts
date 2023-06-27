@@ -5,20 +5,20 @@ import { Supplier } from "./Supplier";
 @Entity()
 export class Product {
   @PrimaryGeneratedColumn()
-  id: number;
+  declare id: number;
 
   @Column()
-  SKU: string;
+  declare SKU: string;
 
   @Column()
-  name: string;
+  declare name: string;
 
   @Column("decimal", { precision: 10, scale: 2})
-  price: number;
+  declare price: number;
 
   @ManyToOne(() => Supplier, (supplier) => supplier.products)
-  supplier: KitProduct[];
+  declare supplier: KitProduct[];
 
   @OneToMany(() => KitProduct, (kitProduct) => kitProduct.product)
-  kitProducts: KitProduct[];
+  declare kitProducts: KitProduct[];
 }

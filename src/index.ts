@@ -1,10 +1,10 @@
-const express = require("express");
+import express, { Request, Response } from 'express';
 import { AppDataSource } from "./data-source";
 import { Product } from "./entity/Product";
 import { Supplier } from "./entity/Supplier";
 
 // CORS
-const cors = require("cors");
+// import cors from 'cors';
 
 AppDataSource.initialize()
   .then(async () => {
@@ -46,7 +46,7 @@ AppDataSource.initialize()
     /**
      * HELLO WORLD
      */
-    app.get("/", (req, res) => {
+    app.get("/", (req: Request, res: Response) => {
       res.send("Lightning is working ⚡⚡⚡");
     });
   })

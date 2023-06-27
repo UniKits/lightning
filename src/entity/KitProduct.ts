@@ -5,17 +5,17 @@ import { Product } from "./Product";
 @Entity()
 export class KitProduct {
   @PrimaryGeneratedColumn()
-  id: number;
+  declare id: number;
 
   @Column()
-  displayName: string;
+  declare displayName: string;
 
   @Column('boolean')
-  visible: boolean;
+  declare visible: boolean;
 
   @ManyToOne(() => Kit, (kit) => kit.kitProducts)
-  kit: Kit;
+  declare kit: Kit;
 
   @ManyToOne(() => Product, (product) => product.kitProducts)
-  product: Product;
+  declare product: Product;
 }
