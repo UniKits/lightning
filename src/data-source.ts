@@ -8,7 +8,7 @@ export const AppDataSource = new DataSource({
   username: "admin",
   password: "8WrDtZmVLsaN7DMT84mM8E",
   database: "unikits",
-  logging: true,
+  logging: false,
   synchronize: true,
   entities: ["src/entity/*.ts"],
   subscribers: [],
