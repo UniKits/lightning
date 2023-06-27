@@ -1,5 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToOne } from "typeorm";
 import { KitProduct } from "./KitProduct";
+import { Supplier } from "./Supplier";
 
 @Entity()
 export class Product {
@@ -12,8 +13,11 @@ export class Product {
   @Column()
   name: string;
 
-  @Column("decimal")
+  @Column("decimal", { precision: 10, scale: 2})
   price: number;
+
+  @ManyToOne(() => Supplier, (supplier) => supplier.products)
+  supplier: KitProduct[];
 
   @OneToMany(() => KitProduct, (kitProduct) => kitProduct.product)
   kitProducts: KitProduct[];

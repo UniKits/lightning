@@ -1,5 +1,6 @@
 const express = require("express");
 import { AppDataSource } from "./data-source"
+import { Product } from "./entity/Product";
 import { Supplier } from "./entity/Supplier"
 
 AppDataSource.initialize().then(async () => {
@@ -13,6 +14,8 @@ AppDataSource.initialize().then(async () => {
     console.log("Loading suppliers from the database...")
     const suppliers = await AppDataSource.manager.find(Supplier)
     console.log("Loaded suppliers: ", suppliers)
+    const products = await AppDataSource.manager.find(Product)
+    console.log("Loaded products: ", products)
 
     console.log("Here you can setup and run express / fastify / any other framework.")
 
